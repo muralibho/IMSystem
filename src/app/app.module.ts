@@ -7,6 +7,8 @@ import { ComponentsComponent } from './components/components.component';
 import { ServicesComponent } from './services/services.component';
 import { GuardsComponent } from './guards/guards.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { PipesComponent } from './pipes/pipes.component';
     ComponentsComponent,
     ServicesComponent,
     GuardsComponent,
-    PipesComponent
+    PipesComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
