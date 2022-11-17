@@ -1,1 +1,25 @@
 <p>create-student works!</p>
+
+<form [formGroup]="studentForm">
+    <label>Name: </label> 
+    <input type="text" formControlName="name">
+    <br>
+    <label>Gender:</label>
+    <input type="radio" formControlName="gender" name="Gender">
+    <label>Male</label>
+    <input type="radio" formControlName="gender" name="Gender">
+    <label>Female</label>
+    <br>
+    <label>Mobile:</label>
+    <input type="number" formControlName="mobile">
+    <br>
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+    <br>
+    <label>Batch:</label>
+    <input type="number" formControlName="batch">
+     <br><br>
+    <button (click)="submit()">SUBMIT</button>
+
+</form>
+
