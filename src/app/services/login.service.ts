@@ -7,10 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+  
+
   constructor(private _httpClient:HttpClient) {
     
    }
-   getLoginForm():Observable<any>
+   login():Observable<any>
    {
     return this._httpClient.get("https://reqres.in/api/login");
    }

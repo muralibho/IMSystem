@@ -1,0 +1,19 @@
+
+.parent{
+        height: 100vh;
+        width: 110vw;
+        display: flex;
+        background-color: mediumseagreen;
+       }
+.child1{
+            height : 100%;
+            width: 17%;
+            margin :left;
+            background-color: yellow;
+            justify-content: center;
+            color:blueviolet;
+            padding: 70px;
+       }
+       button{
+            color:aqua;
+       }
