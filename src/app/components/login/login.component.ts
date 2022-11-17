@@ -24,23 +24,20 @@ export class LoginComponent implements OnInit {
       },
       (err:any)=>{
          alert("Internal server error");
-      }
-
-    )
-  }
-
+         }
+      )
+    }
   ngOnInit(): void {
   }
-
   login(){
-    this._loginService.login().subscribe(
-      (data:any)=>{
-         sessionStorage.setItem("IMSystem-token", data.token);
-        this.router.navigateByUrl("/dashboard");
-       },
-       (err:any)=>{
-         alert("Invalid Credentials");
-  }
-    )
-}
+           this._loginService.login().subscribe(
+           (data:any)=>{
+            sessionStorage.setItem("IMSystem-token", data.token);
+            this.router.navigateByUrl("/dashboard");
+           },
+            (err:any)=>{
+                        alert("Invalid Credentials");
+                       }
+              )
+          }
 }
