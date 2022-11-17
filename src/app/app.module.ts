@@ -10,6 +10,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

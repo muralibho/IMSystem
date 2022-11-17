@@ -1,13 +1,13 @@
 
 
 <div class="parent">
-    <form>
+    <form [formGroup]="loginForm">
 
-        <label>Email:</label>
-        <input type="text">
+        <label for="email">Email:*</label>
+        <input type="text" id="email" placeholder="Enter Email" required formControlName="email">
         <br>
-        <label>Password</label>
-        <input type="password">
+        <label for="psw">Password</label>
+        <input type="password" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required formControlName="password">
         <br><br>
 
         <button (click)="login()">LOGIN</button>
