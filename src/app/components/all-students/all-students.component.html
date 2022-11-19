@@ -1,1 +1,64 @@
-<p>all-students works!</p>
+
+<input type="text" placeholder="search" [(ngModel)]="term">
+<button (click)="filter()">filter</button><br>
+ <select [(ngModel)]="column">
+    <option>name</option>
+    <option>avatar</option>
+    <option>gender</option>
+    <option>mobile</option>
+    <option>batch</option>
+    <option>district-state</option>
+    <option>Companyname</option>
+    <option>package</option>
+ </select>
+ <select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+ </select>
+ <button (click)="sort()">sort</button>
+<br>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>avatar</th>
+            <th>gender</th>
+            <th>mobile</th>
+            <th>batch</th>
+            <th>district</th>
+            <th>state</th>
+            <th>company Name</th>
+            <th>package</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+
+        <td>{{student?.name}}</td>
+        <td>
+        <img src="{{student?.avatar}}" width="100px" height="100px">
+        </td>
+        <td>{{student?.gender}}</td>
+        <td>{{student?.mobile}}</td>
+        <td>{{student?.batch}}</td>
+      <td>{{student?.address?.district}}</td>
+      <td>{{student?.address?.state}}</td>
+      <td>{{student?.company?.name}}</td>
+      <td [ngStyle]="{'color': student?.company?.package >=10? 'blue':'red'}"
+        [ngClass]="{'yellow': student.package >=10,'grey':student.package < 10}">
+      {{student?.company?.package| package}}</td>
+      <td>
+      <button (click)="view(student?.id)" class="btn btn-primary">View</button>
+      <button (click)="edit(student.id)" class="btn btn-success">Edit</button>
+      <button (click)="delete(student.id)" class="btn btn-danger">Delete</button>
+      </td>
+        </tr>
+    </tbody>
+</table>
+<ul class="pagination">
+    <li  class="page-item"(click)="pagination(1)"><a class="page-link">1</a></li>
+    <li class="page-item"(click)="pagination(2)"><a class="page-link">2</a></li>
+    <li class="page-item"(click)="pagination(3)"><a class="page-link">3</a></li>
+    <li class="page-item"(click)="pagination(4)"><a class="page-link">4</a></li>
+    <li class="page-item"(click)="pagination(5)"><a class="page-link">5</a></li>
+  </ul>

@@ -13,6 +13,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreateStudentComponent } from './components/create-student/create-student.component';
 import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { PackagePipe } from './pipes/package.pipe';
+import { PercentagePipe } from './pipes/percentage.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AllStudentsComponent } from './components/all-students/all-students.com
     DashboardComponent,
     PagenotfoundComponent,
     CreateStudentComponent,
-    AllStudentsComponent
+    AllStudentsComponent,
+    PackagePipe,
+    PercentagePipe
   ],
   imports: [
     BrowserModule,

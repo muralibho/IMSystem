@@ -12,9 +12,9 @@ export class LoginService {
   constructor(private _httpClient:HttpClient) {
     
    }
-   login():Observable<any>
+   login(data:any):Observable<any>
    {
-    return this._httpClient.get("https://reqres.in/api/login");
+    return this._httpClient.get("https://reqres.in/api/login", data);
    }
 
 }

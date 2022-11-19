@@ -8,10 +8,12 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [{path:'login', component:LoginComponent},
- {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard], children:[{path:'create-student', component:CreateStudentComponent},
-        {path:'all-students', component:AllStudentsComponent}]},
- {path:'', component:LoginComponent},
- {path:'**', component:PagenotfoundComponent}
+ {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard], children:[
+      {path:'create-student', component:CreateStudentComponent},
+        {path:'all-students', component:AllStudentsComponent}
+      ]},
+       {path:'', component:LoginComponent},
+       {path:'**', component:PagenotfoundComponent}
 ];
 
 @NgModule({

@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
     }
   )
   
-  constructor(private _loginService:LoginService,private router:Router) { 
-    this._loginService.login().subscribe(
+  constructor(private _loginService:LoginService, private router:Router) { 
+    this._loginService.login(this.loginForm).subscribe(
       (data:any)=>{
            this.loginForm = data;
       },
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-           this._loginService.login().subscribe(
+           this._loginService.login(this.loginForm.value).subscribe(
            (data:any)=>{
             sessionStorage.setItem("IMSystem-token", data.token);
             this.router.navigateByUrl("/dashboard");

@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   logout(){
     sessionStorage.removeItem("IMSystem-token");
     this.router.navigateByUrl('/login');

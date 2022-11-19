@@ -1,0 +1,13 @@
+import { ReturnStatement } from '@angular/compiler';
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'package'
+})
+export class PackagePipe implements PipeTransform {
+
+  transform(value: any, args: any) {
+    ReturnStatement;
+  }
+
+}
