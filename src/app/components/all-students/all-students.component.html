@@ -4,12 +4,14 @@
  <select [(ngModel)]="column">
     <option>name</option>
     <option>avatar</option>
+    <option>id</option>
     <option>gender</option>
     <option>mobile</option>
     <option>batch</option>
     <option>district-state</option>
     <option>Companyname</option>
     <option>package</option>
+    <option>percentage</option>
  </select>
  <select [(ngModel)]="order">
     <option>asc</option>
@@ -22,6 +24,7 @@
         <tr>
             <th>name</th>
             <th>avatar</th>
+            <th>id</th>
             <th>gender</th>
             <th>mobile</th>
             <th>batch</th>
@@ -29,6 +32,7 @@
             <th>state</th>
             <th>company Name</th>
             <th>package</th>
+            <th>percentage</th>
         </tr>
     </thead>
     <tbody>
@@ -36,21 +40,24 @@
 
         <td>{{student?.name}}</td>
         <td>
-        <img src="{{student?.avatar}}" width="100px" height="100px">
+        <img src="{{ student?.avatar }}" width="100px" height="100px">
         </td>
-        <td>{{student?.gender}}</td>
-        <td>{{student?.mobile}}</td>
-        <td>{{student?.batch}}</td>
-      <td>{{student?.address?.district}}</td>
-      <td>{{student?.address?.state}}</td>
-      <td>{{student?.company?.name}}</td>
+        <td>{{ student?.id }}</td>
+        <td>{{ student?.gender }}</td>
+        <td>{{ student?.mobile }}</td>
+        <td>{{ student?.batch }}</td>
+      <td>{{ student?.address?.district }}</td>
+      <td>{{ student?.address?.state }}</td>
+      <td>{{ student?.company?.name }}</td>
       <td [ngStyle]="{'color': student?.company?.package >=10? 'blue':'red'}"
         [ngClass]="{'yellow': student.package >=10,'grey':student.package < 10}">
-      {{student?.company?.package| package}}</td>
+      {{ student?.company?.package| package }}</td>
+      
+      <td>{{ student?.percentage| percentage }}</td>
       <td>
       <button (click)="view(student?.id)" class="btn btn-primary">View</button>
-      <button (click)="edit(student.id)" class="btn btn-success">Edit</button>
-      <button (click)="delete(student.id)" class="btn btn-danger">Delete</button>
+      <button (click)="edit(student?.id)" class="btn btn-success">Edit</button>
+      <button (click)="delete(student?.id)" class="btn btn-danger">Delete</button>
       </td>
         </tr>
     </tbody>

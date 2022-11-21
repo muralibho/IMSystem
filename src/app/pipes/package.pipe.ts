@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PackagePipe implements PipeTransform {
 
-  transform(value: any, args: any) {
-    ReturnStatement;
+  transform(value: unknown, ...args: unknown[]): unknown {
+    return value + 'LPA';
   }
 
 }

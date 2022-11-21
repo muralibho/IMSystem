@@ -9,25 +9,37 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class AllStudentsComponent implements OnInit {
 
-  
+
+   public term:string ="";
+   public column:string="";
+   public order:string="";
+  // public name:string="";
+  // public avatar:string="";
+  // public mobile:number=0;
+  // public gender:string="";
+  // public batch:number=0;
+  // public package:number=0;
+  // public percentage:number=0;
+  // public district:string="";
+  // public state:string="";
+  // public companyname:string="";
+
   public students: any=[];
-  public term:string ="";
-  public column:string="";
-  public order:string="";
 
   constructor(private _studentService:StudentService,private router:Router) {
     this._studentService.getStudents().subscribe(
       (data:any)=>{
-        this.students=data;
+        this.students =data;
       },
       (err:any)=>{
-        alert('Internal sever error');
+        alert("Internal sever error");
       }
     )
    }
 
   ngOnInit(): void {
   }
+
   filter(){
     this._studentService.getFilteredStudents(this.term).subscribe(
       (data:any)=>{
@@ -38,6 +50,7 @@ export class AllStudentsComponent implements OnInit {
       }
     )
   }
+
   pagination(page:number){
     this._studentService.getPagedStudents(page).subscribe(
       (data:any)=>{
@@ -51,7 +64,7 @@ export class AllStudentsComponent implements OnInit {
   sort(){
     this._studentService.getSortedStudents(this.column,this.order).subscribe(
       (data:any)=>{
-        this.students=data;
+        this.students = data;
       },
       (err:any)=>{
         alert("Internal server error")
